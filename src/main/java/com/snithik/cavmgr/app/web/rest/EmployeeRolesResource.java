@@ -6,6 +6,8 @@ import com.snithik.cavmgr.app.domain.EmployeeRoles;
 import com.snithik.cavmgr.app.repository.EmployeeRolesRepository;
 import com.snithik.cavmgr.app.web.rest.util.HeaderUtil;
 import io.github.jhipster.web.util.ResponseUtil;
+import io.swagger.annotations.ApiOperation;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
@@ -40,6 +42,7 @@ public class EmployeeRolesResource {
      * @return the ResponseEntity with status 201 (Created) and with body the new employeeRoles, or with status 400 (Bad Request) if the employeeRoles has already an ID
      * @throws URISyntaxException if the Location URI syntax is incorrect
      */
+    @ApiOperation(hidden = true, value = "")
     @PostMapping("/employee-roles")
     @Timed
     public ResponseEntity<EmployeeRoles> createEmployeeRoles(@RequestBody EmployeeRoles employeeRoles) throws URISyntaxException {
@@ -62,6 +65,7 @@ public class EmployeeRolesResource {
      * or with status 500 (Internal Server Error) if the employeeRoles couldnt be updated
      * @throws URISyntaxException if the Location URI syntax is incorrect
      */
+    @ApiOperation(hidden = true, value = "")
     @PutMapping("/employee-roles")
     @Timed
     public ResponseEntity<EmployeeRoles> updateEmployeeRoles(@RequestBody EmployeeRoles employeeRoles) throws URISyntaxException {
@@ -80,6 +84,7 @@ public class EmployeeRolesResource {
      *
      * @return the ResponseEntity with status 200 (OK) and the list of employeeRoles in body
      */
+    @ApiOperation(hidden = true, value = "")
     @GetMapping("/employee-roles")
     @Timed
     public List<EmployeeRoles> getAllEmployeeRoles() {
@@ -94,6 +99,7 @@ public class EmployeeRolesResource {
      * @param id the id of the employeeRoles to retrieve
      * @return the ResponseEntity with status 200 (OK) and with body the employeeRoles, or with status 404 (Not Found)
      */
+    @ApiOperation(hidden = true, value = "")
     @GetMapping("/employee-roles/{id}")
     @Timed
     public ResponseEntity<EmployeeRoles> getEmployeeRoles(@PathVariable Long id) {
@@ -108,6 +114,7 @@ public class EmployeeRolesResource {
      * @param id the id of the employeeRoles to delete
      * @return the ResponseEntity with status 200 (OK)
      */
+    @ApiOperation(hidden = true, value = "")
     @DeleteMapping("/employee-roles/{id}")
     @Timed
     public ResponseEntity<Void> deleteEmployeeRoles(@PathVariable Long id) {

@@ -6,6 +6,8 @@ import com.snithik.cavmgr.app.domain.TripleSetConfig;
 import com.snithik.cavmgr.app.repository.TripleSetConfigRepository;
 import com.snithik.cavmgr.app.web.rest.util.HeaderUtil;
 import io.github.jhipster.web.util.ResponseUtil;
+import io.swagger.annotations.ApiOperation;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
@@ -40,6 +42,7 @@ public class TripleSetConfigResource {
      * @return the ResponseEntity with status 201 (Created) and with body the new tripleSetConfig, or with status 400 (Bad Request) if the tripleSetConfig has already an ID
      * @throws URISyntaxException if the Location URI syntax is incorrect
      */
+    @ApiOperation(hidden = true, value = "")
     @PostMapping("/triple-set-configs")
     @Timed
     public ResponseEntity<TripleSetConfig> createTripleSetConfig(@RequestBody TripleSetConfig tripleSetConfig) throws URISyntaxException {
@@ -62,6 +65,7 @@ public class TripleSetConfigResource {
      * or with status 500 (Internal Server Error) if the tripleSetConfig couldnt be updated
      * @throws URISyntaxException if the Location URI syntax is incorrect
      */
+    @ApiOperation(hidden = true, value = "")
     @PutMapping("/triple-set-configs")
     @Timed
     public ResponseEntity<TripleSetConfig> updateTripleSetConfig(@RequestBody TripleSetConfig tripleSetConfig) throws URISyntaxException {
@@ -80,6 +84,7 @@ public class TripleSetConfigResource {
      *
      * @return the ResponseEntity with status 200 (OK) and the list of tripleSetConfigs in body
      */
+    @ApiOperation(hidden = true, value = "")
     @GetMapping("/triple-set-configs")
     @Timed
     public List<TripleSetConfig> getAllTripleSetConfigs() {
@@ -94,6 +99,7 @@ public class TripleSetConfigResource {
      * @param id the id of the tripleSetConfig to retrieve
      * @return the ResponseEntity with status 200 (OK) and with body the tripleSetConfig, or with status 404 (Not Found)
      */
+    @ApiOperation(hidden = true, value = "")
     @GetMapping("/triple-set-configs/{id}")
     @Timed
     public ResponseEntity<TripleSetConfig> getTripleSetConfig(@PathVariable Long id) {
@@ -108,6 +114,7 @@ public class TripleSetConfigResource {
      * @param id the id of the tripleSetConfig to delete
      * @return the ResponseEntity with status 200 (OK)
      */
+    @ApiOperation(hidden = true, value = "")
     @DeleteMapping("/triple-set-configs/{id}")
     @Timed
     public ResponseEntity<Void> deleteTripleSetConfig(@PathVariable Long id) {

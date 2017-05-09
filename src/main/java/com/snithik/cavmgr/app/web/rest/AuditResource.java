@@ -4,6 +4,7 @@ import com.snithik.cavmgr.app.service.AuditEventService;
 import com.snithik.cavmgr.app.web.rest.util.PaginationUtil;
 
 import io.github.jhipster.web.util.ResponseUtil;
+import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.boot.actuate.audit.AuditEvent;
 import org.springframework.data.domain.Page;
@@ -35,6 +36,7 @@ public class AuditResource {
      * @param pageable the pagination information
      * @return the ResponseEntity with status 200 (OK) and the list of AuditEvents in body
      */
+    @ApiOperation(hidden = true, value = "")
     @GetMapping
     public ResponseEntity<List<AuditEvent>> getAll(@ApiParam Pageable pageable) {
         Page<AuditEvent> page = auditEventService.findAll(pageable);
@@ -50,7 +52,7 @@ public class AuditResource {
      * @param pageable the pagination information
      * @return the ResponseEntity with status 200 (OK) and the list of AuditEvents in body
      */
-
+    @ApiOperation(hidden = true, value = "")
     @GetMapping(params = {"fromDate", "toDate"})
     public ResponseEntity<List<AuditEvent>> getByDates(
         @RequestParam(value = "fromDate") LocalDate fromDate,
@@ -68,6 +70,7 @@ public class AuditResource {
      * @param id the id of the entity to get
      * @return the ResponseEntity with status 200 (OK) and the AuditEvent in body, or status 404 (Not Found)
      */
+    @ApiOperation(hidden = true, value = "")
     @GetMapping("/{id:.+}")
     public ResponseEntity<AuditEvent> get(@PathVariable Long id) {
         return ResponseUtil.wrapOrNotFound(auditEventService.find(id));

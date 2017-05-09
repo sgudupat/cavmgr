@@ -6,6 +6,8 @@ import com.snithik.cavmgr.app.domain.ClientActivityDetails;
 import com.snithik.cavmgr.app.repository.ClientActivityDetailsRepository;
 import com.snithik.cavmgr.app.web.rest.util.HeaderUtil;
 import io.github.jhipster.web.util.ResponseUtil;
+import io.swagger.annotations.ApiOperation;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
@@ -40,6 +42,7 @@ public class ClientActivityDetailsResource {
      * @return the ResponseEntity with status 201 (Created) and with body the new clientActivityDetails, or with status 400 (Bad Request) if the clientActivityDetails has already an ID
      * @throws URISyntaxException if the Location URI syntax is incorrect
      */
+    @ApiOperation(hidden = true, value = "")
     @PostMapping("/client-activity-details")
     @Timed
     public ResponseEntity<ClientActivityDetails> createClientActivityDetails(@RequestBody ClientActivityDetails clientActivityDetails) throws URISyntaxException {
@@ -62,6 +65,7 @@ public class ClientActivityDetailsResource {
      * or with status 500 (Internal Server Error) if the clientActivityDetails couldnt be updated
      * @throws URISyntaxException if the Location URI syntax is incorrect
      */
+    @ApiOperation(hidden = true, value = "")
     @PutMapping("/client-activity-details")
     @Timed
     public ResponseEntity<ClientActivityDetails> updateClientActivityDetails(@RequestBody ClientActivityDetails clientActivityDetails) throws URISyntaxException {
@@ -80,6 +84,7 @@ public class ClientActivityDetailsResource {
      *
      * @return the ResponseEntity with status 200 (OK) and the list of clientActivityDetails in body
      */
+    @ApiOperation(hidden = true, value = "")
     @GetMapping("/client-activity-details")
     @Timed
     public List<ClientActivityDetails> getAllClientActivityDetails() {
@@ -94,6 +99,7 @@ public class ClientActivityDetailsResource {
      * @param id the id of the clientActivityDetails to retrieve
      * @return the ResponseEntity with status 200 (OK) and with body the clientActivityDetails, or with status 404 (Not Found)
      */
+    @ApiOperation(hidden = true, value = "")
     @GetMapping("/client-activity-details/{id}")
     @Timed
     public ResponseEntity<ClientActivityDetails> getClientActivityDetails(@PathVariable Long id) {
@@ -108,6 +114,7 @@ public class ClientActivityDetailsResource {
      * @param id the id of the clientActivityDetails to delete
      * @return the ResponseEntity with status 200 (OK)
      */
+    @ApiOperation(hidden = true, value = "")
     @DeleteMapping("/client-activity-details/{id}")
     @Timed
     public ResponseEntity<Void> deleteClientActivityDetails(@PathVariable Long id) {

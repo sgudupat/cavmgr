@@ -6,6 +6,8 @@ import com.snithik.cavmgr.app.domain.Employees;
 import com.snithik.cavmgr.app.repository.EmployeesRepository;
 import com.snithik.cavmgr.app.web.rest.util.HeaderUtil;
 import io.github.jhipster.web.util.ResponseUtil;
+import io.swagger.annotations.ApiOperation;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
@@ -40,6 +42,7 @@ public class EmployeesResource {
      * @return the ResponseEntity with status 201 (Created) and with body the new employees, or with status 400 (Bad Request) if the employees has already an ID
      * @throws URISyntaxException if the Location URI syntax is incorrect
      */
+    @ApiOperation(hidden = true, value = "")
     @PostMapping("/employees")
     @Timed
     public ResponseEntity<Employees> createEmployees(@RequestBody Employees employees) throws URISyntaxException {
@@ -62,6 +65,7 @@ public class EmployeesResource {
      * or with status 500 (Internal Server Error) if the employees couldnt be updated
      * @throws URISyntaxException if the Location URI syntax is incorrect
      */
+    @ApiOperation(hidden = true, value = "")
     @PutMapping("/employees")
     @Timed
     public ResponseEntity<Employees> updateEmployees(@RequestBody Employees employees) throws URISyntaxException {
@@ -80,6 +84,7 @@ public class EmployeesResource {
      *
      * @return the ResponseEntity with status 200 (OK) and the list of employees in body
      */
+    @ApiOperation(hidden = true, value = "")
     @GetMapping("/employees")
     @Timed
     public List<Employees> getAllEmployees() {
@@ -94,6 +99,7 @@ public class EmployeesResource {
      * @param id the id of the employees to retrieve
      * @return the ResponseEntity with status 200 (OK) and with body the employees, or with status 404 (Not Found)
      */
+    @ApiOperation(hidden = true, value = "")
     @GetMapping("/employees/{id}")
     @Timed
     public ResponseEntity<Employees> getEmployees(@PathVariable Long id) {
@@ -108,6 +114,7 @@ public class EmployeesResource {
      * @param id the id of the employees to delete
      * @return the ResponseEntity with status 200 (OK)
      */
+    @ApiOperation(hidden = true, value = "")
     @DeleteMapping("/employees/{id}")
     @Timed
     public ResponseEntity<Void> deleteEmployees(@PathVariable Long id) {

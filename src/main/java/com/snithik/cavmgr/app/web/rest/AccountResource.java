@@ -10,6 +10,9 @@ import com.snithik.cavmgr.app.service.UserService;
 import com.snithik.cavmgr.app.service.dto.UserDTO;
 import com.snithik.cavmgr.app.web.rest.vm.KeyAndPasswordVM;
 import com.snithik.cavmgr.app.web.rest.vm.ManagedUserVM;
+
+import io.swagger.annotations.ApiOperation;
+
 import com.snithik.cavmgr.app.web.rest.util.HeaderUtil;
 
 import org.apache.commons.lang3.StringUtils;
@@ -54,6 +57,7 @@ public class AccountResource {
      * @param managedUserVM the managed user View Model
      * @return the ResponseEntity with status 201 (Created) if the user is registered or 400 (Bad Request) if the login or email is already in use
      */
+    @ApiOperation(hidden = true, value = "")
     @PostMapping(path = "/register",
                     produces={MediaType.APPLICATION_JSON_VALUE, MediaType.TEXT_PLAIN_VALUE})
     @Timed
@@ -84,6 +88,7 @@ public class AccountResource {
      * @param key the activation key
      * @return the ResponseEntity with status 200 (OK) and the activated user in body, or status 500 (Internal Server Error) if the user couldn't be activated
      */
+    @ApiOperation(hidden = true, value = "")
     @GetMapping("/activate")
     @Timed
     public ResponseEntity<String> activateAccount(@RequestParam(value = "key") String key) {
@@ -98,6 +103,7 @@ public class AccountResource {
      * @param request the HTTP request
      * @return the login if the user is authenticated
      */
+    @ApiOperation(hidden = true, value = "")
     @GetMapping("/authenticate")
     @Timed
     public String isAuthenticated(HttpServletRequest request) {
@@ -110,6 +116,7 @@ public class AccountResource {
      *
      * @return the ResponseEntity with status 200 (OK) and the current user in body, or status 500 (Internal Server Error) if the user couldn't be returned
      */
+    @ApiOperation(hidden = true, value = "")
     @GetMapping("/account")
     @Timed
     public ResponseEntity<UserDTO> getAccount() {
@@ -124,6 +131,7 @@ public class AccountResource {
      * @param userDTO the current user information
      * @return the ResponseEntity with status 200 (OK), or status 400 (Bad Request) or 500 (Internal Server Error) if the user couldn't be updated
      */
+    @ApiOperation(hidden = true, value = "")
     @PostMapping("/account")
     @Timed
     public ResponseEntity saveAccount(@Valid @RequestBody UserDTO userDTO) {
@@ -147,6 +155,7 @@ public class AccountResource {
      * @param password the new password
      * @return the ResponseEntity with status 200 (OK), or status 400 (Bad Request) if the new password is not strong enough
      */
+    @ApiOperation(hidden = true, value = "")
     @PostMapping(path = "/account/change_password",
         produces = MediaType.TEXT_PLAIN_VALUE)
     @Timed
@@ -164,6 +173,7 @@ public class AccountResource {
      * @param mail the mail of the user
      * @return the ResponseEntity with status 200 (OK) if the email was sent, or status 400 (Bad Request) if the email address is not registered
      */
+    @ApiOperation(hidden = true, value = "")
     @PostMapping(path = "/account/reset_password/init",
         produces = MediaType.TEXT_PLAIN_VALUE)
     @Timed
@@ -182,6 +192,7 @@ public class AccountResource {
      * @return the ResponseEntity with status 200 (OK) if the password has been reset,
      * or status 400 (Bad Request) or 500 (Internal Server Error) if the password could not be reset
      */
+    @ApiOperation(hidden = true, value = "")
     @PostMapping(path = "/account/reset_password/finish",
         produces = MediaType.TEXT_PLAIN_VALUE)
     @Timed

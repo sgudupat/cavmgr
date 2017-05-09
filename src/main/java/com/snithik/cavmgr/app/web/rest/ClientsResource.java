@@ -6,6 +6,8 @@ import com.snithik.cavmgr.app.domain.Clients;
 import com.snithik.cavmgr.app.repository.ClientsRepository;
 import com.snithik.cavmgr.app.web.rest.util.HeaderUtil;
 import io.github.jhipster.web.util.ResponseUtil;
+import io.swagger.annotations.ApiOperation;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
@@ -40,6 +42,7 @@ public class ClientsResource {
      * @return the ResponseEntity with status 201 (Created) and with body the new clients, or with status 400 (Bad Request) if the clients has already an ID
      * @throws URISyntaxException if the Location URI syntax is incorrect
      */
+    @ApiOperation(hidden = true, value = "")
     @PostMapping("/clients")
     @Timed
     public ResponseEntity<Clients> createClients(@RequestBody Clients clients) throws URISyntaxException {
@@ -62,6 +65,7 @@ public class ClientsResource {
      * or with status 500 (Internal Server Error) if the clients couldnt be updated
      * @throws URISyntaxException if the Location URI syntax is incorrect
      */
+    @ApiOperation(hidden = true, value = "")
     @PutMapping("/clients")
     @Timed
     public ResponseEntity<Clients> updateClients(@RequestBody Clients clients) throws URISyntaxException {
@@ -80,6 +84,7 @@ public class ClientsResource {
      *
      * @return the ResponseEntity with status 200 (OK) and the list of clients in body
      */
+    @ApiOperation(hidden = true, value = "")
     @GetMapping("/clients")
     @Timed
     public List<Clients> getAllClients() {
@@ -94,6 +99,7 @@ public class ClientsResource {
      * @param id the id of the clients to retrieve
      * @return the ResponseEntity with status 200 (OK) and with body the clients, or with status 404 (Not Found)
      */
+    @ApiOperation(hidden = true, value = "")
     @GetMapping("/clients/{id}")
     @Timed
     public ResponseEntity<Clients> getClients(@PathVariable Long id) {
@@ -108,6 +114,7 @@ public class ClientsResource {
      * @param id the id of the clients to delete
      * @return the ResponseEntity with status 200 (OK)
      */
+    @ApiOperation(hidden = true, value = "")
     @DeleteMapping("/clients/{id}")
     @Timed
     public ResponseEntity<Void> deleteClients(@PathVariable Long id) {

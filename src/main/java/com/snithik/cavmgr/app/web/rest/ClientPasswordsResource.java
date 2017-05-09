@@ -6,6 +6,8 @@ import com.snithik.cavmgr.app.domain.ClientPasswords;
 import com.snithik.cavmgr.app.repository.ClientPasswordsRepository;
 import com.snithik.cavmgr.app.web.rest.util.HeaderUtil;
 import io.github.jhipster.web.util.ResponseUtil;
+import io.swagger.annotations.ApiOperation;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
@@ -40,6 +42,7 @@ public class ClientPasswordsResource {
      * @return the ResponseEntity with status 201 (Created) and with body the new clientPasswords, or with status 400 (Bad Request) if the clientPasswords has already an ID
      * @throws URISyntaxException if the Location URI syntax is incorrect
      */
+    @ApiOperation(hidden = true, value = "")
     @PostMapping("/client-passwords")
     @Timed
     public ResponseEntity<ClientPasswords> createClientPasswords(@RequestBody ClientPasswords clientPasswords) throws URISyntaxException {
@@ -62,6 +65,7 @@ public class ClientPasswordsResource {
      * or with status 500 (Internal Server Error) if the clientPasswords couldnt be updated
      * @throws URISyntaxException if the Location URI syntax is incorrect
      */
+    @ApiOperation(hidden = true, value = "")
     @PutMapping("/client-passwords")
     @Timed
     public ResponseEntity<ClientPasswords> updateClientPasswords(@RequestBody ClientPasswords clientPasswords) throws URISyntaxException {
@@ -80,6 +84,7 @@ public class ClientPasswordsResource {
      *
      * @return the ResponseEntity with status 200 (OK) and the list of clientPasswords in body
      */
+    @ApiOperation(hidden = true, value = "")
     @GetMapping("/client-passwords")
     @Timed
     public List<ClientPasswords> getAllClientPasswords() {
@@ -94,6 +99,7 @@ public class ClientPasswordsResource {
      * @param id the id of the clientPasswords to retrieve
      * @return the ResponseEntity with status 200 (OK) and with body the clientPasswords, or with status 404 (Not Found)
      */
+    @ApiOperation(hidden = true, value = "")
     @GetMapping("/client-passwords/{id}")
     @Timed
     public ResponseEntity<ClientPasswords> getClientPasswords(@PathVariable Long id) {
@@ -108,6 +114,7 @@ public class ClientPasswordsResource {
      * @param id the id of the clientPasswords to delete
      * @return the ResponseEntity with status 200 (OK)
      */
+    @ApiOperation(hidden = true, value = "")
     @DeleteMapping("/client-passwords/{id}")
     @Timed
     public ResponseEntity<Void> deleteClientPasswords(@PathVariable Long id) {

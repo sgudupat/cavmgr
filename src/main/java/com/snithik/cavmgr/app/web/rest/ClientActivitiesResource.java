@@ -6,6 +6,8 @@ import com.snithik.cavmgr.app.domain.ClientActivities;
 import com.snithik.cavmgr.app.repository.ClientActivitiesRepository;
 import com.snithik.cavmgr.app.web.rest.util.HeaderUtil;
 import io.github.jhipster.web.util.ResponseUtil;
+import io.swagger.annotations.ApiOperation;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
@@ -40,6 +42,7 @@ public class ClientActivitiesResource {
      * @return the ResponseEntity with status 201 (Created) and with body the new clientActivities, or with status 400 (Bad Request) if the clientActivities has already an ID
      * @throws URISyntaxException if the Location URI syntax is incorrect
      */
+    @ApiOperation(hidden = true, value = "")
     @PostMapping("/client-activities")
     @Timed
     public ResponseEntity<ClientActivities> createClientActivities(@RequestBody ClientActivities clientActivities) throws URISyntaxException {
@@ -62,6 +65,7 @@ public class ClientActivitiesResource {
      * or with status 500 (Internal Server Error) if the clientActivities couldnt be updated
      * @throws URISyntaxException if the Location URI syntax is incorrect
      */
+    @ApiOperation(hidden = true, value = "")
     @PutMapping("/client-activities")
     @Timed
     public ResponseEntity<ClientActivities> updateClientActivities(@RequestBody ClientActivities clientActivities) throws URISyntaxException {
@@ -80,6 +84,7 @@ public class ClientActivitiesResource {
      *
      * @return the ResponseEntity with status 200 (OK) and the list of clientActivities in body
      */
+    @ApiOperation(hidden = true, value = "")
     @GetMapping("/client-activities")
     @Timed
     public List<ClientActivities> getAllClientActivities() {
@@ -94,6 +99,7 @@ public class ClientActivitiesResource {
      * @param id the id of the clientActivities to retrieve
      * @return the ResponseEntity with status 200 (OK) and with body the clientActivities, or with status 404 (Not Found)
      */
+    @ApiOperation(hidden = true, value = "")
     @GetMapping("/client-activities/{id}")
     @Timed
     public ResponseEntity<ClientActivities> getClientActivities(@PathVariable Long id) {
@@ -108,6 +114,7 @@ public class ClientActivitiesResource {
      * @param id the id of the clientActivities to delete
      * @return the ResponseEntity with status 200 (OK)
      */
+    @ApiOperation(hidden = true, value = "")
     @DeleteMapping("/client-activities/{id}")
     @Timed
     public ResponseEntity<Void> deleteClientActivities(@PathVariable Long id) {

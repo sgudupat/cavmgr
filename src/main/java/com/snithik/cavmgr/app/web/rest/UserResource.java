@@ -12,6 +12,7 @@ import com.snithik.cavmgr.app.web.rest.vm.ManagedUserVM;
 import com.snithik.cavmgr.app.web.rest.util.HeaderUtil;
 import com.snithik.cavmgr.app.web.rest.util.PaginationUtil;
 import io.github.jhipster.web.util.ResponseUtil;
+import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 
 import org.slf4j.Logger;
@@ -86,6 +87,7 @@ public class UserResource {
      * @return the ResponseEntity with status 201 (Created) and with body the new user, or with status 400 (Bad Request) if the login or email is already in use
      * @throws URISyntaxException if the Location URI syntax is incorrect
      */
+    @ApiOperation(hidden = true, value = "")
     @PostMapping("/users")
     @Timed
     @Secured(AuthoritiesConstants.ADMIN)
@@ -122,6 +124,7 @@ public class UserResource {
      * or with status 400 (Bad Request) if the login or email is already in use,
      * or with status 500 (Internal Server Error) if the user couldn't be updated
      */
+    @ApiOperation(hidden = true, value = "")
     @PutMapping("/users")
     @Timed
     @Secured(AuthoritiesConstants.ADMIN)
@@ -147,6 +150,7 @@ public class UserResource {
      * @param pageable the pagination information
      * @return the ResponseEntity with status 200 (OK) and with body all users
      */
+    @ApiOperation(hidden = true, value = "")
     @GetMapping("/users")
     @Timed
     public ResponseEntity<List<UserDTO>> getAllUsers(@ApiParam Pageable pageable) {
@@ -161,6 +165,7 @@ public class UserResource {
      * @param login the login of the user to find
      * @return the ResponseEntity with status 200 (OK) and with body the "login" user, or with status 404 (Not Found)
      */
+    @ApiOperation(hidden = true, value = "")
     @GetMapping("/users/{login:" + Constants.LOGIN_REGEX + "}")
     @Timed
     public ResponseEntity<UserDTO> getUser(@PathVariable String login) {
@@ -176,6 +181,7 @@ public class UserResource {
      * @param login the login of the user to delete
      * @return the ResponseEntity with status 200 (OK)
      */
+    @ApiOperation(hidden = true, value = "")
     @DeleteMapping("/users/{login:" + Constants.LOGIN_REGEX + "}")
     @Timed
     @Secured(AuthoritiesConstants.ADMIN)
