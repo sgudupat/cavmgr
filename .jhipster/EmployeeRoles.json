@@ -1,0 +1,42 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "user",
+            "otherEntityName": "employees",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "roleName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "creationDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "createdBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lastUpdateDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "lastUpatedBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "orgId",
+            "fieldType": "Long"
+        }
+    ],
+    "changelogDate": "20170509191156",
+    "entityTableName": "employee_roles",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

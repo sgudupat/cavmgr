@@ -1,0 +1,128 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myClientsLabel" data-translate="cavmgrApp.clients.home.createOrEditLabel">Create or edit a Clients</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.clients.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.clients.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="cavmgrApp.clients.entityName" for="field_entityName">Entity Name</label>
+            <input type="text" class="form-control" name="entityName" id="field_entityName"
+                    ng-model="vm.clients.entityName"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="cavmgrApp.clients.contactPerson" for="field_contactPerson">Contact Person</label>
+            <input type="text" class="form-control" name="contactPerson" id="field_contactPerson"
+                    ng-model="vm.clients.contactPerson"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="cavmgrApp.clients.emailAddress" for="field_emailAddress">Email Address</label>
+            <input type="text" class="form-control" name="emailAddress" id="field_emailAddress"
+                    ng-model="vm.clients.emailAddress"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="cavmgrApp.clients.officePhone" for="field_officePhone">Office Phone</label>
+            <input type="number" class="form-control" name="officePhone" id="field_officePhone"
+                    ng-model="vm.clients.officePhone"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="cavmgrApp.clients.mobilePhone" for="field_mobilePhone">Mobile Phone</label>
+            <input type="number" class="form-control" name="mobilePhone" id="field_mobilePhone"
+                    ng-model="vm.clients.mobilePhone"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="cavmgrApp.clients.billingPeriod" for="field_billingPeriod">Billing Period</label>
+            <input type="text" class="form-control" name="billingPeriod" id="field_billingPeriod"
+                    ng-model="vm.clients.billingPeriod"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="cavmgrApp.clients.panNumber" for="field_panNumber">Pan Number</label>
+            <input type="text" class="form-control" name="panNumber" id="field_panNumber"
+                    ng-model="vm.clients.panNumber"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="cavmgrApp.clients.tanNumber" for="field_tanNumber">Tan Number</label>
+            <input type="text" class="form-control" name="tanNumber" id="field_tanNumber"
+                    ng-model="vm.clients.tanNumber"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="cavmgrApp.clients.dateOfIncorp" for="field_dateOfIncorp">Date Of Incorp</label>
+                <div class="input-group">
+                    <input id="field_dateOfIncorp" type="text" class="form-control" name="dateOfIncorp" datetime-picker="{{dateformat}}" ng-model="vm.clients.dateOfIncorp" is-open="vm.datePickerOpenStatus.dateOfIncorp"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dateOfIncorp')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="cavmgrApp.clients.grade" for="field_grade">Grade</label>
+            <input type="text" class="form-control" name="grade" id="field_grade"
+                    ng-model="vm.clients.grade"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="cavmgrApp.clients.creationDate" for="field_creationDate">Creation Date</label>
+                <div class="input-group">
+                    <input id="field_creationDate" type="text" class="form-control" name="creationDate" datetime-picker="{{dateformat}}" ng-model="vm.clients.creationDate" is-open="vm.datePickerOpenStatus.creationDate"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('creationDate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="cavmgrApp.clients.createdBy" for="field_createdBy">Created By</label>
+            <input type="text" class="form-control" name="createdBy" id="field_createdBy"
+                    ng-model="vm.clients.createdBy"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="cavmgrApp.clients.lastUpdateDate" for="field_lastUpdateDate">Last Update Date</label>
+                <div class="input-group">
+                    <input id="field_lastUpdateDate" type="text" class="form-control" name="lastUpdateDate" datetime-picker="{{dateformat}}" ng-model="vm.clients.lastUpdateDate" is-open="vm.datePickerOpenStatus.lastUpdateDate"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('lastUpdateDate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="cavmgrApp.clients.lastUpatedBy" for="field_lastUpatedBy">Last Upated By</label>
+            <input type="text" class="form-control" name="lastUpatedBy" id="field_lastUpatedBy"
+                    ng-model="vm.clients.lastUpatedBy"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="cavmgrApp.clients.orgId" for="field_orgId">Org Id</label>
+            <input type="number" class="form-control" name="orgId" id="field_orgId"
+                    ng-model="vm.clients.orgId"
+                    />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

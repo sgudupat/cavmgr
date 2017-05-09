@@ -1,0 +1,59 @@
+
+<div>
+    <h2><span data-translate="cavmgrApp.employees.detail.title">Employees</span> {{vm.employees.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="cavmgrApp.employees.name">Name</span></dt>
+        <dd>
+            <span>{{vm.employees.name}}</span>
+        </dd>
+        <dt><span data-translate="cavmgrApp.employees.password">Password</span></dt>
+        <dd>
+            <span>{{vm.employees.password}}</span>
+        </dd>
+        <dt><span data-translate="cavmgrApp.employees.emailAddress">Email Address</span></dt>
+        <dd>
+            <span>{{vm.employees.emailAddress}}</span>
+        </dd>
+        <dt><span data-translate="cavmgrApp.employees.mobilePhone">Mobile Phone</span></dt>
+        <dd>
+            <span>{{vm.employees.mobilePhone}}</span>
+        </dd>
+        <dt><span data-translate="cavmgrApp.employees.status">Status</span></dt>
+        <dd>
+            <span>{{vm.employees.status}}</span>
+        </dd>
+        <dt><span data-translate="cavmgrApp.employees.creationDate">Creation Date</span></dt>
+        <dd>
+            <span>{{vm.employees.creationDate | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="cavmgrApp.employees.createdBy">Created By</span></dt>
+        <dd>
+            <span>{{vm.employees.createdBy}}</span>
+        </dd>
+        <dt><span data-translate="cavmgrApp.employees.lastUpdateDate">Last Update Date</span></dt>
+        <dd>
+            <span>{{vm.employees.lastUpdateDate | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="cavmgrApp.employees.lastUpatedBy">Last Upated By</span></dt>
+        <dd>
+            <span>{{vm.employees.lastUpatedBy}}</span>
+        </dd>
+        <dt><span data-translate="cavmgrApp.employees.orgId">Org Id</span></dt>
+        <dd>
+            <span>{{vm.employees.orgId}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="employees-detail.edit({id:vm.employees.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,35 @@
+{
+    "cavmgrApp": {
+        "clients" : {
+            "home": {
+                "title": "Clients",
+                "createLabel": "Create a new Clients",
+                "createOrEditLabel": "Create or edit a Clients"
+            },
+            "created": "A new Clients is created with identifier {{ param }}",
+            "updated": "A Clients is updated with identifier {{ param }}",
+            "deleted": "A Clients is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Clients {{ id }}?"
+            },
+            "detail": {
+                "title": "Clients"
+            },
+            "entityName": "Entity Name",
+            "contactPerson": "Contact Person",
+            "emailAddress": "Email Address",
+            "officePhone": "Office Phone",
+            "mobilePhone": "Mobile Phone",
+            "billingPeriod": "Billing Period",
+            "panNumber": "Pan Number",
+            "tanNumber": "Tan Number",
+            "dateOfIncorp": "Date Of Incorp",
+            "grade": "Grade",
+            "creationDate": "Creation Date",
+            "createdBy": "Created By",
+            "lastUpdateDate": "Last Update Date",
+            "lastUpatedBy": "Last Upated By",
+            "orgId": "Org Id"
+        }
+    }
+}

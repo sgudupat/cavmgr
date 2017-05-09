@@ -5,6 +5,17 @@
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
 
     <include file="classpath:config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170509191155_added_entity_Employees.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170509191156_added_entity_EmployeeRoles.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170509191157_added_entity_Clients.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170509191158_added_entity_ClientPasswords.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170509191159_added_entity_ClientActivities.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170509191200_added_entity_ClientActivityDetails.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170509191201_added_entity_TripleSetConfig.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="classpath:config/liquibase/changelog/20170509191156_added_entity_constraints_EmployeeRoles.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170509191158_added_entity_constraints_ClientPasswords.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170509191159_added_entity_constraints_ClientActivities.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170509191200_added_entity_constraints_ClientActivityDetails.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

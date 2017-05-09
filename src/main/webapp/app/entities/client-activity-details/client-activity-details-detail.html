@@ -1,0 +1,75 @@
+
+<div>
+    <h2><span data-translate="cavmgrApp.clientActivityDetails.detail.title">Client Activity Details</span> {{vm.clientActivityDetails.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="cavmgrApp.clientActivityDetails.name">Name</span></dt>
+        <dd>
+            <span>{{vm.clientActivityDetails.name}}</span>
+        </dd>
+        <dt><span data-translate="cavmgrApp.clientActivityDetails.dueDate">Due Date</span></dt>
+        <dd>
+            <span>{{vm.clientActivityDetails.dueDate}}</span>
+        </dd>
+        <dt><span data-translate="cavmgrApp.clientActivityDetails.internalDueDate">Internal Due Date</span></dt>
+        <dd>
+            <span>{{vm.clientActivityDetails.internalDueDate}}</span>
+        </dd>
+        <dt><span data-translate="cavmgrApp.clientActivityDetails.status">Status</span></dt>
+        <dd>
+            <span>{{vm.clientActivityDetails.status}}</span>
+        </dd>
+        <dt><span data-translate="cavmgrApp.clientActivityDetails.comments">Comments</span></dt>
+        <dd>
+            <span>{{vm.clientActivityDetails.comments}}</span>
+        </dd>
+        <dt><span data-translate="cavmgrApp.clientActivityDetails.workStatus">Work Status</span></dt>
+        <dd>
+            <span>{{vm.clientActivityDetails.workStatus}}</span>
+        </dd>
+        <dt><span data-translate="cavmgrApp.clientActivityDetails.monthYear">Month Year</span></dt>
+        <dd>
+            <span>{{vm.clientActivityDetails.monthYear}}</span>
+        </dd>
+        <dt><span data-translate="cavmgrApp.clientActivityDetails.creationDate">Creation Date</span></dt>
+        <dd>
+            <span>{{vm.clientActivityDetails.creationDate | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="cavmgrApp.clientActivityDetails.createdBy">Created By</span></dt>
+        <dd>
+            <span>{{vm.clientActivityDetails.createdBy}}</span>
+        </dd>
+        <dt><span data-translate="cavmgrApp.clientActivityDetails.lastUpdateDate">Last Update Date</span></dt>
+        <dd>
+            <span>{{vm.clientActivityDetails.lastUpdateDate | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="cavmgrApp.clientActivityDetails.lastUpatedBy">Last Upated By</span></dt>
+        <dd>
+            <span>{{vm.clientActivityDetails.lastUpatedBy}}</span>
+        </dd>
+        <dt><span data-translate="cavmgrApp.clientActivityDetails.orgId">Org Id</span></dt>
+        <dd>
+            <span>{{vm.clientActivityDetails.orgId}}</span>
+        </dd>
+        <dt><span data-translate="cavmgrApp.clientActivityDetails.responsibleMgr">Responsible Mgr</span></dt>
+        <dd>
+            <a ui-sref="employees-detail({id:vm.clientActivityDetails.responsibleMgr.id})">{{vm.clientActivityDetails.responsibleMgr.id}}</a>
+        </dd>
+        <dt><span data-translate="cavmgrApp.clientActivityDetails.client">Client</span></dt>
+        <dd>
+            <a ui-sref="clients-detail({id:vm.clientActivityDetails.client.id})">{{vm.clientActivityDetails.client.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="client-activity-details-detail.edit({id:vm.clientActivityDetails.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

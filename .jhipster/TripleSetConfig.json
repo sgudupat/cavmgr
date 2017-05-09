@@ -1,0 +1,43 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "control",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "parent",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "child",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "config",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "creationDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "createdBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lastUpdateDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "lastUpatedBy",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170509191201",
+    "entityTableName": "triple_set_config",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

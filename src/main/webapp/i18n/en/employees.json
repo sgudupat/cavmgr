@@ -1,0 +1,30 @@
+{
+    "cavmgrApp": {
+        "employees" : {
+            "home": {
+                "title": "Employees",
+                "createLabel": "Create a new Employees",
+                "createOrEditLabel": "Create or edit a Employees"
+            },
+            "created": "A new Employees is created with identifier {{ param }}",
+            "updated": "A Employees is updated with identifier {{ param }}",
+            "deleted": "A Employees is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Employees {{ id }}?"
+            },
+            "detail": {
+                "title": "Employees"
+            },
+            "name": "Name",
+            "password": "Password",
+            "emailAddress": "Email Address",
+            "mobilePhone": "Mobile Phone",
+            "status": "Status",
+            "creationDate": "Creation Date",
+            "createdBy": "Created By",
+            "lastUpdateDate": "Last Update Date",
+            "lastUpatedBy": "Last Upated By",
+            "orgId": "Org Id"
+        }
+    }
+}

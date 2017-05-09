@@ -1,0 +1,51 @@
+
+<div>
+    <h2><span data-translate="cavmgrApp.tripleSetConfig.detail.title">Triple Set Config</span> {{vm.tripleSetConfig.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="cavmgrApp.tripleSetConfig.control">Control</span></dt>
+        <dd>
+            <span>{{vm.tripleSetConfig.control}}</span>
+        </dd>
+        <dt><span data-translate="cavmgrApp.tripleSetConfig.parent">Parent</span></dt>
+        <dd>
+            <span>{{vm.tripleSetConfig.parent}}</span>
+        </dd>
+        <dt><span data-translate="cavmgrApp.tripleSetConfig.child">Child</span></dt>
+        <dd>
+            <span>{{vm.tripleSetConfig.child}}</span>
+        </dd>
+        <dt><span data-translate="cavmgrApp.tripleSetConfig.config">Config</span></dt>
+        <dd>
+            <span>{{vm.tripleSetConfig.config}}</span>
+        </dd>
+        <dt><span data-translate="cavmgrApp.tripleSetConfig.creationDate">Creation Date</span></dt>
+        <dd>
+            <span>{{vm.tripleSetConfig.creationDate | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="cavmgrApp.tripleSetConfig.createdBy">Created By</span></dt>
+        <dd>
+            <span>{{vm.tripleSetConfig.createdBy}}</span>
+        </dd>
+        <dt><span data-translate="cavmgrApp.tripleSetConfig.lastUpdateDate">Last Update Date</span></dt>
+        <dd>
+            <span>{{vm.tripleSetConfig.lastUpdateDate | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="cavmgrApp.tripleSetConfig.lastUpatedBy">Last Upated By</span></dt>
+        <dd>
+            <span>{{vm.tripleSetConfig.lastUpatedBy}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="triple-set-config-detail.edit({id:vm.tripleSetConfig.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

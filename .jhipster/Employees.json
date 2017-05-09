@@ -1,0 +1,51 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "password",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "emailAddress",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "mobilePhone",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "creationDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "createdBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lastUpdateDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "lastUpatedBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "orgId",
+            "fieldType": "Long"
+        }
+    ],
+    "changelogDate": "20170509191155",
+    "entityTableName": "employees",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

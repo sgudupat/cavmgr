@@ -1,0 +1,67 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myClientActivitiesLabel" data-translate="cavmgrApp.clientActivities.home.createOrEditLabel">Create or edit a Client Activities</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.clientActivities.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.clientActivities.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="cavmgrApp.clientActivities.activityName" for="field_activityName">Activity Name</label>
+            <input type="text" class="form-control" name="activityName" id="field_activityName"
+                    ng-model="vm.clientActivities.activityName"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="cavmgrApp.clientActivities.priority" for="field_priority">Priority</label>
+            <input type="number" class="form-control" name="priority" id="field_priority"
+                    ng-model="vm.clientActivities.priority"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="cavmgrApp.clientActivities.applicability" for="field_applicability">Applicability</label>
+                <input type="checkbox" name="applicability" id="field_applicability"
+                          ng-model="vm.clientActivities.applicability"/>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="cavmgrApp.clientActivities.orgId" for="field_orgId">Org Id</label>
+            <input type="number" class="form-control" name="orgId" id="field_orgId"
+                    ng-model="vm.clientActivities.orgId"
+                    />
+        </div>
+
+        <div class="form-group">
+            <label data-translate="cavmgrApp.clientActivities.user" for="field_user">User</label>
+            <select class="form-control" id="field_user" name="user" ng-model="vm.clientActivities.user" ng-options="employees as employees.id for employees in vm.employees track by employees.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="cavmgrApp.clientActivities.client" for="field_client">Client</label>
+            <select class="form-control" id="field_client" name="client" ng-model="vm.clientActivities.client" ng-options="clients as clients.id for clients in vm.clients track by clients.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="cavmgrApp.clientActivities.responsibleMgr" for="field_responsibleMgr">Responsible Mgr</label>
+            <select class="form-control" id="field_responsibleMgr" name="responsibleMgr" ng-model="vm.clientActivities.responsibleMgr" ng-options="employees as employees.id for employees in vm.employees track by employees.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

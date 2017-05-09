@@ -1,0 +1,74 @@
+<div>
+    <h2 data-translate="cavmgrApp.clientActivities.home.title">Client Activities</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="client-activities.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="cavmgrApp.clientActivities.home.createLabel">
+                        Create new Client Activities
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="cavmgrApp.clientActivities.activityName">Activity Name</span></th>
+                    <th><span data-translate="cavmgrApp.clientActivities.priority">Priority</span></th>
+                    <th><span data-translate="cavmgrApp.clientActivities.applicability">Applicability</span></th>
+                    <th><span data-translate="cavmgrApp.clientActivities.orgId">Org Id</span></th>
+                    <th><span data-translate="cavmgrApp.clientActivities.user">User</span></th>
+                    <th><span data-translate="cavmgrApp.clientActivities.client">Client</span></th>
+                    <th><span data-translate="cavmgrApp.clientActivities.responsibleMgr">Responsible Mgr</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="clientActivities in vm.clientActivities track by clientActivities.id">
+                    <td><a ui-sref="client-activities-detail({id:clientActivities.id})">{{clientActivities.id}}</a></td>
+                    <td>{{clientActivities.activityName}}</td>
+                    <td>{{clientActivities.priority}}</td>
+                    <td>{{clientActivities.applicability}}</td>
+                    <td>{{clientActivities.orgId}}</td>
+                    <td>
+                        <a ui-sref="employees-detail({id:clientActivities.user.id})">{{clientActivities.user.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="clients-detail({id:clientActivities.client.id})">{{clientActivities.client.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="employees-detail({id:clientActivities.responsibleMgr.id})">{{clientActivities.responsibleMgr.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="client-activities-detail({id:clientActivities.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="client-activities.edit({id:clientActivities.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="client-activities.delete({id:clientActivities.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,70 @@
+<div>
+    <h2 data-translate="cavmgrApp.employeeRoles.home.title">Employee Roles</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="employee-roles.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="cavmgrApp.employeeRoles.home.createLabel">
+                        Create new Employee Roles
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="cavmgrApp.employeeRoles.roleName">Role Name</span></th>
+                    <th><span data-translate="cavmgrApp.employeeRoles.creationDate">Creation Date</span></th>
+                    <th><span data-translate="cavmgrApp.employeeRoles.createdBy">Created By</span></th>
+                    <th><span data-translate="cavmgrApp.employeeRoles.lastUpdateDate">Last Update Date</span></th>
+                    <th><span data-translate="cavmgrApp.employeeRoles.lastUpatedBy">Last Upated By</span></th>
+                    <th><span data-translate="cavmgrApp.employeeRoles.orgId">Org Id</span></th>
+                    <th><span data-translate="cavmgrApp.employeeRoles.user">User</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="employeeRoles in vm.employeeRoles track by employeeRoles.id">
+                    <td><a ui-sref="employee-roles-detail({id:employeeRoles.id})">{{employeeRoles.id}}</a></td>
+                    <td>{{employeeRoles.roleName}}</td>
+                    <td>{{employeeRoles.creationDate | date:'medium'}}</td>
+                    <td>{{employeeRoles.createdBy}}</td>
+                    <td>{{employeeRoles.lastUpdateDate | date:'medium'}}</td>
+                    <td>{{employeeRoles.lastUpatedBy}}</td>
+                    <td>{{employeeRoles.orgId}}</td>
+                    <td>
+                        <a ui-sref="employees-detail({id:employeeRoles.user.id})">{{employeeRoles.user.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="employee-roles-detail({id:employeeRoles.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="employee-roles.edit({id:employeeRoles.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="employee-roles.delete({id:employeeRoles.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

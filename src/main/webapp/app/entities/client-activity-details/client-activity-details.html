@@ -1,0 +1,86 @@
+<div>
+    <h2 data-translate="cavmgrApp.clientActivityDetails.home.title">Client Activity Details</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="client-activity-details.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="cavmgrApp.clientActivityDetails.home.createLabel">
+                        Create new Client Activity Details
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="cavmgrApp.clientActivityDetails.name">Name</span></th>
+                    <th><span data-translate="cavmgrApp.clientActivityDetails.dueDate">Due Date</span></th>
+                    <th><span data-translate="cavmgrApp.clientActivityDetails.internalDueDate">Internal Due Date</span></th>
+                    <th><span data-translate="cavmgrApp.clientActivityDetails.status">Status</span></th>
+                    <th><span data-translate="cavmgrApp.clientActivityDetails.comments">Comments</span></th>
+                    <th><span data-translate="cavmgrApp.clientActivityDetails.workStatus">Work Status</span></th>
+                    <th><span data-translate="cavmgrApp.clientActivityDetails.monthYear">Month Year</span></th>
+                    <th><span data-translate="cavmgrApp.clientActivityDetails.creationDate">Creation Date</span></th>
+                    <th><span data-translate="cavmgrApp.clientActivityDetails.createdBy">Created By</span></th>
+                    <th><span data-translate="cavmgrApp.clientActivityDetails.lastUpdateDate">Last Update Date</span></th>
+                    <th><span data-translate="cavmgrApp.clientActivityDetails.lastUpatedBy">Last Upated By</span></th>
+                    <th><span data-translate="cavmgrApp.clientActivityDetails.orgId">Org Id</span></th>
+                    <th><span data-translate="cavmgrApp.clientActivityDetails.responsibleMgr">Responsible Mgr</span></th>
+                    <th><span data-translate="cavmgrApp.clientActivityDetails.client">Client</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="clientActivityDetails in vm.clientActivityDetails track by clientActivityDetails.id">
+                    <td><a ui-sref="client-activity-details-detail({id:clientActivityDetails.id})">{{clientActivityDetails.id}}</a></td>
+                    <td>{{clientActivityDetails.name}}</td>
+                    <td>{{clientActivityDetails.dueDate}}</td>
+                    <td>{{clientActivityDetails.internalDueDate}}</td>
+                    <td>{{clientActivityDetails.status}}</td>
+                    <td>{{clientActivityDetails.comments}}</td>
+                    <td>{{clientActivityDetails.workStatus}}</td>
+                    <td>{{clientActivityDetails.monthYear}}</td>
+                    <td>{{clientActivityDetails.creationDate | date:'medium'}}</td>
+                    <td>{{clientActivityDetails.createdBy}}</td>
+                    <td>{{clientActivityDetails.lastUpdateDate | date:'medium'}}</td>
+                    <td>{{clientActivityDetails.lastUpatedBy}}</td>
+                    <td>{{clientActivityDetails.orgId}}</td>
+                    <td>
+                        <a ui-sref="employees-detail({id:clientActivityDetails.responsibleMgr.id})">{{clientActivityDetails.responsibleMgr.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="clients-detail({id:clientActivityDetails.client.id})">{{clientActivityDetails.client.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="client-activity-details-detail({id:clientActivityDetails.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="client-activity-details.edit({id:clientActivityDetails.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="client-activity-details.delete({id:clientActivityDetails.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

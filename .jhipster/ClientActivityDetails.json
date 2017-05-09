@@ -1,0 +1,72 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "responsibleMgr",
+            "otherEntityName": "employees",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "client",
+            "otherEntityName": "clients",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dueDate",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "internalDueDate",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "comments",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "workStatus",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "monthYear",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "creationDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "createdBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lastUpdateDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "lastUpatedBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "orgId",
+            "fieldType": "Long"
+        }
+    ],
+    "changelogDate": "20170509191200",
+    "entityTableName": "client_activity_details",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

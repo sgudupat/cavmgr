@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity ClientActivities.
+    -->
+    <changeSet id="20170509191159-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="user_id"
+                                 baseTableName="client_activities"
+                                 constraintName="fk_client_activities_user_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="employees"/>
+
+        <addForeignKeyConstraint baseColumnNames="client_id"
+                                 baseTableName="client_activities"
+                                 constraintName="fk_client_activities_client_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="clients"/>
+
+        <addForeignKeyConstraint baseColumnNames="responsible_mgr_id"
+                                 baseTableName="client_activities"
+                                 constraintName="fk_client_activities_responsible_mgr_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="employees"/>
+
+    </changeSet>
+</databaseChangeLog>

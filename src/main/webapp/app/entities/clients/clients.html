@@ -1,0 +1,84 @@
+<div>
+    <h2 data-translate="cavmgrApp.clients.home.title">Clients</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="clients.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="cavmgrApp.clients.home.createLabel">
+                        Create new Clients
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="cavmgrApp.clients.entityName">Entity Name</span></th>
+                    <th><span data-translate="cavmgrApp.clients.contactPerson">Contact Person</span></th>
+                    <th><span data-translate="cavmgrApp.clients.emailAddress">Email Address</span></th>
+                    <th><span data-translate="cavmgrApp.clients.officePhone">Office Phone</span></th>
+                    <th><span data-translate="cavmgrApp.clients.mobilePhone">Mobile Phone</span></th>
+                    <th><span data-translate="cavmgrApp.clients.billingPeriod">Billing Period</span></th>
+                    <th><span data-translate="cavmgrApp.clients.panNumber">Pan Number</span></th>
+                    <th><span data-translate="cavmgrApp.clients.tanNumber">Tan Number</span></th>
+                    <th><span data-translate="cavmgrApp.clients.dateOfIncorp">Date Of Incorp</span></th>
+                    <th><span data-translate="cavmgrApp.clients.grade">Grade</span></th>
+                    <th><span data-translate="cavmgrApp.clients.creationDate">Creation Date</span></th>
+                    <th><span data-translate="cavmgrApp.clients.createdBy">Created By</span></th>
+                    <th><span data-translate="cavmgrApp.clients.lastUpdateDate">Last Update Date</span></th>
+                    <th><span data-translate="cavmgrApp.clients.lastUpatedBy">Last Upated By</span></th>
+                    <th><span data-translate="cavmgrApp.clients.orgId">Org Id</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="clients in vm.clients track by clients.id">
+                    <td><a ui-sref="clients-detail({id:clients.id})">{{clients.id}}</a></td>
+                    <td>{{clients.entityName}}</td>
+                    <td>{{clients.contactPerson}}</td>
+                    <td>{{clients.emailAddress}}</td>
+                    <td>{{clients.officePhone}}</td>
+                    <td>{{clients.mobilePhone}}</td>
+                    <td>{{clients.billingPeriod}}</td>
+                    <td>{{clients.panNumber}}</td>
+                    <td>{{clients.tanNumber}}</td>
+                    <td>{{clients.dateOfIncorp | date:'medium'}}</td>
+                    <td>{{clients.grade}}</td>
+                    <td>{{clients.creationDate | date:'medium'}}</td>
+                    <td>{{clients.createdBy}}</td>
+                    <td>{{clients.lastUpdateDate | date:'medium'}}</td>
+                    <td>{{clients.lastUpatedBy}}</td>
+                    <td>{{clients.orgId}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="clients-detail({id:clients.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="clients.edit({id:clients.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="clients.delete({id:clients.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

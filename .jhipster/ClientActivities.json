@@ -1,0 +1,46 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "user",
+            "otherEntityName": "employees",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "client",
+            "otherEntityName": "clients",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "responsibleMgr",
+            "otherEntityName": "employees",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "activityName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "priority",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "applicability",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "orgId",
+            "fieldType": "Long"
+        }
+    ],
+    "changelogDate": "20170509191159",
+    "entityTableName": "client_activities",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

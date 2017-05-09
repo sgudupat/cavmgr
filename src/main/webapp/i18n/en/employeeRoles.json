@@ -1,0 +1,27 @@
+{
+    "cavmgrApp": {
+        "employeeRoles" : {
+            "home": {
+                "title": "Employee Roles",
+                "createLabel": "Create a new Employee Roles",
+                "createOrEditLabel": "Create or edit a Employee Roles"
+            },
+            "created": "A new Employee Roles is created with identifier {{ param }}",
+            "updated": "A Employee Roles is updated with identifier {{ param }}",
+            "deleted": "A Employee Roles is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Employee Roles {{ id }}?"
+            },
+            "detail": {
+                "title": "Employee Roles"
+            },
+            "roleName": "Role Name",
+            "creationDate": "Creation Date",
+            "createdBy": "Created By",
+            "lastUpdateDate": "Last Update Date",
+            "lastUpatedBy": "Last Upated By",
+            "orgId": "Org Id",
+            "user": "User"
+        }
+    }
+}

@@ -1,0 +1,47 @@
+
+<div>
+    <h2><span data-translate="cavmgrApp.clientActivities.detail.title">Client Activities</span> {{vm.clientActivities.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="cavmgrApp.clientActivities.activityName">Activity Name</span></dt>
+        <dd>
+            <span>{{vm.clientActivities.activityName}}</span>
+        </dd>
+        <dt><span data-translate="cavmgrApp.clientActivities.priority">Priority</span></dt>
+        <dd>
+            <span>{{vm.clientActivities.priority}}</span>
+        </dd>
+        <dt><span data-translate="cavmgrApp.clientActivities.applicability">Applicability</span></dt>
+        <dd>
+            <span>{{vm.clientActivities.applicability}}</span>
+        </dd>
+        <dt><span data-translate="cavmgrApp.clientActivities.orgId">Org Id</span></dt>
+        <dd>
+            <span>{{vm.clientActivities.orgId}}</span>
+        </dd>
+        <dt><span data-translate="cavmgrApp.clientActivities.user">User</span></dt>
+        <dd>
+            <a ui-sref="employees-detail({id:vm.clientActivities.user.id})">{{vm.clientActivities.user.id}}</a>
+        </dd>
+        <dt><span data-translate="cavmgrApp.clientActivities.client">Client</span></dt>
+        <dd>
+            <a ui-sref="clients-detail({id:vm.clientActivities.client.id})">{{vm.clientActivities.client.id}}</a>
+        </dd>
+        <dt><span data-translate="cavmgrApp.clientActivities.responsibleMgr">Responsible Mgr</span></dt>
+        <dd>
+            <a ui-sref="employees-detail({id:vm.clientActivities.responsibleMgr.id})">{{vm.clientActivities.responsibleMgr.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="client-activities-detail.edit({id:vm.clientActivities.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

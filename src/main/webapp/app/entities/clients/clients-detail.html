@@ -1,0 +1,79 @@
+
+<div>
+    <h2><span data-translate="cavmgrApp.clients.detail.title">Clients</span> {{vm.clients.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="cavmgrApp.clients.entityName">Entity Name</span></dt>
+        <dd>
+            <span>{{vm.clients.entityName}}</span>
+        </dd>
+        <dt><span data-translate="cavmgrApp.clients.contactPerson">Contact Person</span></dt>
+        <dd>
+            <span>{{vm.clients.contactPerson}}</span>
+        </dd>
+        <dt><span data-translate="cavmgrApp.clients.emailAddress">Email Address</span></dt>
+        <dd>
+            <span>{{vm.clients.emailAddress}}</span>
+        </dd>
+        <dt><span data-translate="cavmgrApp.clients.officePhone">Office Phone</span></dt>
+        <dd>
+            <span>{{vm.clients.officePhone}}</span>
+        </dd>
+        <dt><span data-translate="cavmgrApp.clients.mobilePhone">Mobile Phone</span></dt>
+        <dd>
+            <span>{{vm.clients.mobilePhone}}</span>
+        </dd>
+        <dt><span data-translate="cavmgrApp.clients.billingPeriod">Billing Period</span></dt>
+        <dd>
+            <span>{{vm.clients.billingPeriod}}</span>
+        </dd>
+        <dt><span data-translate="cavmgrApp.clients.panNumber">Pan Number</span></dt>
+        <dd>
+            <span>{{vm.clients.panNumber}}</span>
+        </dd>
+        <dt><span data-translate="cavmgrApp.clients.tanNumber">Tan Number</span></dt>
+        <dd>
+            <span>{{vm.clients.tanNumber}}</span>
+        </dd>
+        <dt><span data-translate="cavmgrApp.clients.dateOfIncorp">Date Of Incorp</span></dt>
+        <dd>
+            <span>{{vm.clients.dateOfIncorp | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="cavmgrApp.clients.grade">Grade</span></dt>
+        <dd>
+            <span>{{vm.clients.grade}}</span>
+        </dd>
+        <dt><span data-translate="cavmgrApp.clients.creationDate">Creation Date</span></dt>
+        <dd>
+            <span>{{vm.clients.creationDate | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="cavmgrApp.clients.createdBy">Created By</span></dt>
+        <dd>
+            <span>{{vm.clients.createdBy}}</span>
+        </dd>
+        <dt><span data-translate="cavmgrApp.clients.lastUpdateDate">Last Update Date</span></dt>
+        <dd>
+            <span>{{vm.clients.lastUpdateDate | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="cavmgrApp.clients.lastUpatedBy">Last Upated By</span></dt>
+        <dd>
+            <span>{{vm.clients.lastUpatedBy}}</span>
+        </dd>
+        <dt><span data-translate="cavmgrApp.clients.orgId">Org Id</span></dt>
+        <dd>
+            <span>{{vm.clients.orgId}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="clients-detail.edit({id:vm.clients.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

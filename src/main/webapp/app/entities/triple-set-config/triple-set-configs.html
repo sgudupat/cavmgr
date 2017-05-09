@@ -1,0 +1,70 @@
+<div>
+    <h2 data-translate="cavmgrApp.tripleSetConfig.home.title">Triple Set Configs</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="triple-set-config.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="cavmgrApp.tripleSetConfig.home.createLabel">
+                        Create new Triple Set Config
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="cavmgrApp.tripleSetConfig.control">Control</span></th>
+                    <th><span data-translate="cavmgrApp.tripleSetConfig.parent">Parent</span></th>
+                    <th><span data-translate="cavmgrApp.tripleSetConfig.child">Child</span></th>
+                    <th><span data-translate="cavmgrApp.tripleSetConfig.config">Config</span></th>
+                    <th><span data-translate="cavmgrApp.tripleSetConfig.creationDate">Creation Date</span></th>
+                    <th><span data-translate="cavmgrApp.tripleSetConfig.createdBy">Created By</span></th>
+                    <th><span data-translate="cavmgrApp.tripleSetConfig.lastUpdateDate">Last Update Date</span></th>
+                    <th><span data-translate="cavmgrApp.tripleSetConfig.lastUpatedBy">Last Upated By</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="tripleSetConfig in vm.tripleSetConfigs track by tripleSetConfig.id">
+                    <td><a ui-sref="triple-set-config-detail({id:tripleSetConfig.id})">{{tripleSetConfig.id}}</a></td>
+                    <td>{{tripleSetConfig.control}}</td>
+                    <td>{{tripleSetConfig.parent}}</td>
+                    <td>{{tripleSetConfig.child}}</td>
+                    <td>{{tripleSetConfig.config}}</td>
+                    <td>{{tripleSetConfig.creationDate | date:'medium'}}</td>
+                    <td>{{tripleSetConfig.createdBy}}</td>
+                    <td>{{tripleSetConfig.lastUpdateDate | date:'medium'}}</td>
+                    <td>{{tripleSetConfig.lastUpatedBy}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="triple-set-config-detail({id:tripleSetConfig.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="triple-set-config.edit({id:tripleSetConfig.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="triple-set-config.delete({id:tripleSetConfig.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

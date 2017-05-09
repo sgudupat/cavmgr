@@ -1,0 +1,71 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "entityName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contactPerson",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "emailAddress",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "officePhone",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "mobilePhone",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "billingPeriod",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "panNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tanNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dateOfIncorp",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "grade",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "creationDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "createdBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lastUpdateDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "lastUpatedBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "orgId",
+            "fieldType": "Long"
+        }
+    ],
+    "changelogDate": "20170509191157",
+    "entityTableName": "clients",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}
