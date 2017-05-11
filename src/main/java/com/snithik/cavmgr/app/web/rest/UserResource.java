@@ -2,6 +2,7 @@ package com.snithik.cavmgr.app.web.rest;
 
 import com.snithik.cavmgr.app.config.Constants;
 import com.codahale.metrics.annotation.Timed;
+import com.snithik.cavmgr.app.domain.Clients;
 import com.snithik.cavmgr.app.domain.User;
 import com.snithik.cavmgr.app.repository.UserRepository;
 import com.snithik.cavmgr.app.security.AuthoritiesConstants;
@@ -23,6 +24,8 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
@@ -189,5 +192,15 @@ public class UserResource {
         log.debug("REST request to delete User: {}", login);
         userService.deleteUser(login);
         return ResponseEntity.ok().headers(HeaderUtil.createAlert( "userManagement.deleted", login)).build();
+    }
+    
+    public User getUser() {
+    	Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String login = auth.getName(); //get logged in username
+    	log.debug("Login Name is "+login);
+		User user = userRepository.findByLogin(login);
+    	
+        log.debug("REST request to get all Clients by OrgId");
+        return user;
     }
 }

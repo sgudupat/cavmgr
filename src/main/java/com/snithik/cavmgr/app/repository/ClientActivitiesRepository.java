@@ -12,4 +12,7 @@ import java.util.List;
 @SuppressWarnings("unused")
 public interface ClientActivitiesRepository extends JpaRepository<ClientActivities,Long> {
 
+	List<ClientActivities> findByResponsibleMgr(Long responsibleMgr);
+
+
 }
