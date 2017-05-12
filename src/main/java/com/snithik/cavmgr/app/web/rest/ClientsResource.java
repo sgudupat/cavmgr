@@ -3,9 +3,11 @@ package com.snithik.cavmgr.app.web.rest;
 import com.codahale.metrics.annotation.Timed;
 import com.snithik.cavmgr.app.domain.ClientActivities;
 import com.snithik.cavmgr.app.domain.Clients;
+import com.snithik.cavmgr.app.domain.Employees;
 import com.snithik.cavmgr.app.domain.User;
 import com.snithik.cavmgr.app.repository.ClientActivitiesRepository;
 import com.snithik.cavmgr.app.repository.ClientsRepository;
+import com.snithik.cavmgr.app.repository.EmployeesRepository;
 import com.snithik.cavmgr.app.repository.UserRepository;
 import com.snithik.cavmgr.app.web.rest.util.HeaderUtil;
 import io.github.jhipster.web.util.ResponseUtil;
@@ -39,6 +41,8 @@ public class ClientsResource {
     private static final String ENTITY_NAME = "clients";
         
     private final ClientsRepository clientsRepository;
+    @Autowired
+    private EmployeesRepository employeesRepository;
     @Autowired
     private ClientActivitiesRepository clientActivitiesRepository;
     @Autowired
@@ -137,23 +141,20 @@ public class ClientsResource {
    @SuppressWarnings({ "unused", "unchecked" })
 	@GetMapping("/clientsByManger")
     @Timed
-    public ResponseEntity<ArrayList<Clients>> getAllClientsByMgr(@RequestParam Long managerId) {
+    public ResponseEntity<Set<Clients>> getAllClientsByMgr(@RequestParam Long managerId) {
         log.debug("REST request to get all Clients by Mgr");
         Set<Clients> clients = new HashSet<>();
-        
-        List<ClientActivities> client_activities = clientActivitiesRepository.findByResponsibleMgr(managerId);
+        Employees employee =employeesRepository.findOne(managerId);
+        List<ClientActivities> client_activities = clientActivitiesRepository.findByResponsibleMgr(employee);
         
         log.debug("Following Client Activities were found");
         client_activities.forEach(clientActivity ->{
         	log.debug(client_activities.toString());
         	 clients.add(clientActivity.getClient());
         });
-        if(clients==null){
-        	return (ResponseEntity<ArrayList<Clients>>) ResponseEntity.ok();
-        }
        
         //return (ArrayList<Clients>)clients;
-        return ResponseUtil.wrapOrNotFound(Optional.ofNullable((ArrayList<Clients>)clients));
+        return ResponseUtil.wrapOrNotFound(Optional.ofNullable((Set<Clients>)clients));
     }
     
     @SuppressWarnings("unchecked")
