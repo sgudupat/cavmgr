@@ -14,4 +14,6 @@ public interface ClientsRepository extends JpaRepository<Clients,Long> {
 
 	List<Clients> findByOrgId(Long id);
 
+	
+
 }
